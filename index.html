@@ -1,97 +1,232 @@
-<!DOCTYPE html>
-<html class="mdl-js">
-  <head>
-    <title>Portfolio | Orlee Gillis</title>
-    <!-- Material Design Lite -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-lime.min.css">
-   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orlee Gillis | Portfolio</title>
+<meta name="description" content="Portfolio of Orlee Gillis, Senior Technical Writer. Explore Ridgeline, a docs-as-code example project.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0F2A27;
+  --paper:#EEF3F1;
+  --teal:#0B5D52;
+  --body:#2B4743;
+  --muted:#4A6460;
+  --line:#CBD9D5;
+  --orange:#E8590C;
+  --orange-dark:#C2410C;
+  --pale:#C9DAD6;
+  --outline:#5E8680;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif;line-height:1.6}
+a{color:var(--teal);text-underline-offset:3px}
+a:hover{color:#08423A}
+a:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 
+.wrap{max-width:1120px;margin:0 auto;padding-left:24px;padding-right:24px}
+.display{font-family:'Bricolage Grotesque',sans-serif;font-weight:700}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+h1,h2,h3,p{margin:0}
+h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:36px;line-height:1.15;letter-spacing:-.01em;margin-top:12px}
 
-   <!-- Font Awesome -->
-   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+/* Buttons */
+.btn{display:inline-block;min-height:44px;padding:13px 24px;border-radius:6px;font-weight:500;text-decoration:none;color:var(--paper);border:1px solid var(--outline)}
+.btn:hover{color:#fff;border-color:var(--pale)}
+.btn-primary{background:var(--orange);border-color:var(--orange);color:#fff;padding:14px 26px;transition:background .15s}
+.btn-primary:hover{background:var(--orange-dark);border-color:var(--orange-dark);color:#fff}
 
-   <!-- Custom Styles -->
-   <link rel="stylesheet" href="styles/main.css">
-  </head>
-  <body>
- <header class="mdl-layout__header mdl-layout__header--transparent">
-       <h1>Orlee Gillis</h1>
-       <p class="slogan">I’m a UX Designer based in Tel Aviv.</p>
-   </header>
+/* Nav */
+.site-header{padding-top:28px;padding-bottom:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.brand{font-size:20px;letter-spacing:-.01em}
+.site-nav{display:flex;flex-wrap:wrap;gap:24px;font-size:15px}
+.site-nav a{color:var(--ink);text-decoration:none}
+.site-nav a:hover{text-decoration:underline;text-underline-offset:6px;color:var(--ink)}
 
-       <main class="mdl-layout__content mdl-grid">
+/* Hero */
+.hero{position:relative;overflow:hidden;background:var(--ink);color:var(--paper)}
+.hero-art{position:absolute;left:0;right:0;bottom:0;width:100%;height:100%;opacity:.9}
+.hero-inner{position:relative;padding-top:96px;padding-bottom:180px}
+.hero .eyebrow{color:#F59E6C}
+.hero h1{margin-top:16px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:64px;line-height:1.05;letter-spacing:-.02em;max-width:820px}
+.hero .lede{margin-top:28px;font-size:20px;max-width:680px;color:var(--pale)}
+.hero-actions{margin-top:40px;display:flex;flex-wrap:wrap;gap:16px}
 
-        <div class="project featured-project mdl-grid mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
-           <div class="mdl-cell mdl-cell--5-col mdl-cell--12-col-tablet">
-              <img src="http://lorempixel.com/350/260/abstract/placeholder-1" alt="project screenshot"/>
-            </div>
-            <div class="mdl-cell mdl-cell--7-col">
-              <h2 class="mdl-card__title-text">Featured Project Name</h2>
-              <p class="project-description mdl-card__supporting-text">Project description text</p>
-            </div>
-          </div>
-          <div class="project mdl-cell mdl-card mdl-shadow--4dp">
-           <div>
-             <img src="http://lorempixel.com/350/260/abstract/placeholder-2" alt="project screenshot"/>
-           </div>
-           <div class="mdl-card__title">
-             <h2 class="mdl-card__title-text">Project Name</h2>
-           </div>
-           <div class="mdl-card__supporting-text">Project description text</div>
-         </div>
+/* About */
+.about{padding-top:88px;padding-bottom:40px}
+.about-grid{display:flex;flex-wrap:wrap;gap:48px}
+.about-head{flex:1 1 280px}
+.about-body{flex:1.6 1 380px;font-size:18px;color:var(--body)}
+.about-body p{margin-bottom:18px}
+.about-body p:last-child{margin-bottom:0}
 
-         <div class="project mdl-cell mdl-card mdl-shadow--4dp">
-           <div>
-             <img src="http://lorempixel.com/350/260/abstract/placeholder-3" alt="project screenshot"/>
-           </div>
-           <div class="mdl-card__title">
-             <h2 class="mdl-card__title-text">Project Name</h2>
-           </div>
-           <div class="mdl-card__supporting-text">Project description text</div>
-         </div>
+/* Project */
+.project{padding-top:56px;padding-bottom:56px}
+.project-panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:48px;display:flex;flex-wrap:wrap;gap:48px}
+.project-copy{flex:1.3 1 360px}
+.project-copy p{margin-top:16px;font-size:18px;color:var(--body)}
+.project-copy h2+p{margin-top:20px}
+.project-links{flex:1 1 280px;display:flex;flex-direction:column;gap:14px;align-self:center}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:20px 22px;text-decoration:none;color:var(--ink);background:#F6FAF9}
+.card:hover{border-color:var(--ink);color:var(--ink)}
+.card-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:20px}
+.card-text{font-size:15px;color:var(--muted);margin-top:4px}
 
-         <div class="project mdl-cell mdl-card mdl-shadow--4dp">
-           <div>
-             <img src="http://lorempixel.com/350/260/abstract/placeholder-4" alt="project screenshot"/>
-           </div>
-           <div class="mdl-card__title">
-             <h2 class="mdl-card__title-text">Project Name</h2>
-           </div>
-           <div class="mdl-card__supporting-text">Project description text</div>
-         </div>
+/* How it works */
+.how{padding-top:56px;padding-bottom:72px}
+.how h2{max-width:700px}
+.steps{margin:40px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.step{border-top:3px solid var(--ink);padding-top:18px}
+.step-num{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--orange-dark);font-weight:500}
+.step-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:22px;margin-top:6px}
+.step p{margin-top:8px;font-size:16px;color:var(--body)}
 
+/* Footer */
+.site-footer{background:var(--ink);color:var(--paper)}
+.footer-main{padding-top:64px;padding-bottom:64px;display:flex;flex-wrap:wrap;gap:32px;align-items:center;justify-content:space-between}
+.footer-copy{max-width:560px}
+.footer-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:30px;line-height:1.2}
+.footer-copy p{margin-top:10px;color:var(--pale);font-size:17px}
+.footer-actions{display:flex;flex-wrap:wrap;gap:16px}
+.footer-legal{border-top:1px solid #24504A}
+.footer-legal .wrap{padding-top:20px;padding-bottom:20px;font-size:14px;color:#9DB8B3}
 
+/* Phone */
+@media (max-width:640px){
+  .hero-inner{padding-top:56px;padding-bottom:120px}
+  .hero h1{font-size:40px}
+  .hero .lede{font-size:18px}
+  h2{font-size:30px}
+  .about{padding-top:56px}
+  .project-panel{padding:28px 22px;gap:32px}
+  .footer-title{font-size:26px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn-primary{transition:none}
+}
+</style>
+</head>
+<body>
 
-   </main>
-       <footer class="mdl-mini-footer">
-       <ul class="mdl-mini-footer__link-list">
-        <li>
-           <a href="{https://www.linkedin.com/in/orleegillis/}">
-             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-           </a>
-         </li>
-         <li>
-           <a href="{https://github.com/orlee-gillis}">
-             <i class="fa fa-github-square" aria-hidden="true"></i>
-           </a>
-         </li>
-         <li>
-           <a href="{https://www.facebook.com/orlee.gillis}">
-             <i class="fa fa-facebook-square" aria-hidden="true"></i>
-           </a>
-         </li>
-         <li>
-           <a href="{https://twitter.com/2EEsinOrlee}">
-             <i class="fa fa-twitter-square" aria-hidden="true"></i>
-           </a>
-         </li>
-         <li>
-           <a href="mailto:{orlee.gillis@gmail.com}">
-             <i class="fa fa-envelope-square" aria-hidden="true"></i>
-           </a>
-         </li>
-       </ul>
-     </footer>
-  </body>
+<header class="wrap site-header">
+  <div class="display brand">Orlee Gillis</div>
+  <nav class="site-nav" aria-label="Main">
+    <a href="#about">About</a>
+    <a href="#project">The project</a>
+    <a href="#how">How it works</a>
+    <a href="https://orlee-gillis.github.io/ridgeline-docs/">Read the docs</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+  <svg class="hero-art" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+    <path d="M0 420 L140 360 L260 395 L420 300 L560 360 L700 270 L860 350 L1010 280 L1160 340 L1300 290 L1440 330 L1440 520 L0 520Z" fill="#14403A"/>
+    <path d="M0 470 L180 410 L320 445 L500 370 L660 430 L820 360 L980 425 L1140 380 L1290 420 L1440 395 L1440 520 L0 520Z" fill="#1A5249"/>
+    <path d="M0 505 L220 465 L420 490 L640 450 L860 488 L1080 455 L1260 485 L1440 465 L1440 520 L0 520Z" fill="#0B3B34"/>
+  </svg>
+  <div class="wrap hero-inner">
+    <div class="eyebrow">Portfolio</div>
+    <h1>Hi, I'm Orlee. I write documentation that people can actually use.</h1>
+    <p class="lede">I'm a Senior Technical Writer in Israel, working on support enablement at XM Cyber. This site is my portfolio: a working example of how I build, review and ship documentation.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://orlee-gillis.github.io/ridgeline-docs/">Explore the Ridgeline docs</a>
+      <a class="btn" href="#project">What is this project?</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="wrap about">
+  <div class="about-grid">
+    <div class="about-head">
+      <div class="eyebrow">About me</div>
+      <h2>Documentation as a product, not an afterthought</h2>
+    </div>
+    <div class="about-body">
+      <p>I'm currently a Senior Technical Writer on the support enablement side at XM Cyber, where I own the documentation for the core CTEM platform. Before that I managed documentation at SysAid, and earlier I wrote for Check Point, IT Central Station and Cyberint.</p>
+      <p>My background is in teaching, and it shows in how I write: I start from what the reader is trying to get done, then work out the shortest honest path to it. I also work with LLM and MCP documentation, and I use AI tools every day as part of how I draft and edit.</p>
+      <p>I'm moving toward roles where documentation, enablement and customer operations meet, where the question is not just "is this page well written?" but "did it help the business?"</p>
+    </div>
+  </div>
+</section>
+
+<section id="project" class="wrap project">
+  <div class="project-panel">
+    <div class="project-copy">
+      <div class="eyebrow">The project</div>
+      <h2>Ridgeline documentation</h2>
+      <p>Ridgeline is a fictional security product. I invented it so I could show a complete documentation set without sharing anything confidential from my employers.</p>
+      <p>The docs site is the real thing, though. Every page is a Markdown file in a Git repository, every change goes through a pull request, and the site rebuilds and deploys automatically when a change is merged.</p>
+      <p>The newest section covers an Unused Access feature, written with an AI-assisted workflow under human editorial control. The AI drafts, flagged problems and my edits are all kept in the open.</p>
+    </div>
+    <div class="project-links">
+      <a class="card" href="https://orlee-gillis.github.io/ridgeline-docs/">
+        <div class="card-title">Ridgeline documentation</div>
+        <div class="card-text">The docs home: start here.</div>
+      </a>
+      <a class="card" href="https://orlee-gillis.github.io/ridgeline-docs/unused-access-report">
+        <div class="card-title">Unused Access</div>
+        <div class="card-text">A feature page from the AI-assisted workflow.</div>
+      </a>
+      <a class="card" href="https://orlee-gillis.github.io/ridgeline-docs/what-changed">
+        <div class="card-title">About this project</div>
+        <div class="card-text">What I changed, and why.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="wrap how">
+  <div class="eyebrow">How it works</div>
+  <h2>From a Markdown file to a live page in four steps</h2>
+  <ol class="steps">
+    <li class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Write</div>
+      <p>Pages live as Markdown in a Git repository, next to the history of every change.</p>
+    </li>
+    <li class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Review</div>
+      <p>Each change is a pull request, so edits are visible and discussed before they ship.</p>
+    </li>
+    <li class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Check</div>
+      <p>Automated builds block any merge that would break the site.</p>
+    </li>
+    <li class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">Publish</div>
+      <p>Merging to the main branch deploys the new version to GitHub Pages automatically.</p>
+    </li>
+  </ol>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-main">
+    <div class="footer-copy">
+      <div class="footer-title">Want to see how I work?</div>
+      <p>Read the docs, then look at the pull requests behind them.</p>
+    </div>
+    <div class="footer-actions">
+      <a class="btn btn-primary" href="https://orlee-gillis.github.io/ridgeline-docs/">Read the docs</a>
+      <a class="btn" href="https://github.com/orlee-gillis/ridgeline-docs">View the repository</a>
+      <a class="btn" href="https://www.linkedin.com/in/orleegillis/">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-legal">
+    <div class="wrap">© 2026 Orlee Gillis. Ridgeline is a fictional product created for this portfolio.</div>
+  </div>
+</footer>
+
+</body>
 </html>
